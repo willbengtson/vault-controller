@@ -62,6 +62,7 @@ If you'd like to build a debian package you need to make sure you have `fpm` ins
 ### Example Vault authentication response
 ```
 {"request_id":"1b105e2e-4996-77e6-a4b7-37583b124ea2","lease_id":"","renewable":false,"lease_duration":0,"data":null,"wrap_info":null,"warnings":null,"auth":{"client_token":"2c89f2ec-d50f-4821-9032-de2664589d26","accessor":"5cfa295b-2b5c-44bd-86c7-67ce90741e37","policies":["default","service/gitlab-dev"],"metadata":{"account_id":"123456789123","ami_id":"ami-00000000","instance_id":"i-837dadd923847109a","nonce":"Gtp5msp3jEq759qpIvntP","region":"us-west-2","role":"example-prod","role_tag_max_ttl":"0s"},"lease_duration":43200,"renewable":true}}
+```
 
 ### Example vault-controller output
 
