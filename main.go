@@ -114,7 +114,7 @@ func main() {
 	retryDelay := 5 * time.Second
 	go func() {
 		for {
-			tokeRenewal, err := client.Auth().Token().RenewSelf(secret.Auth.LeaseDuration)
+			tokenRenewal, err := client.Auth().Token().RenewSelf(secret.Auth.LeaseDuration)
 			if err != nil {
 				log.Info("token-renew: Renew client token error: ", err, "; retrying in ", retryDelay)
 				time.Sleep(retryDelay)
@@ -122,7 +122,7 @@ func main() {
 			}
 
 			// To play it safe, let's renew at the half way point.
-			nextRenew := tokeRenewal.Auth.LeaseDuration / 2
+			nextRenew := tokenRenewal.Auth.LeaseDuration / 2
 			log.Info("token-renew: Successfully renewed the client token; next renewal in ", nextRenew, " seconds")
 			// Sleep for the renewal wait period
 			time.Sleep(time.Duration(nextRenew) * time.Second)
